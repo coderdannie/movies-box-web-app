@@ -12,13 +12,18 @@ const MovieDetails = () => {
   const { title, release_date, runtime, overview, poster_path, genres } =
     fullData;
   const posterImg = `http://image.tmdb.org/t/p/w154${poster_path}`;
-  function convertToUTC(date) {
-    if (!(date instanceof Date)) {
-      date = new Date(date);
+  function convertToUTCDateString(apiDate) {
+    if (!(apiDate instanceof Date)) {
+      apiDate = new Date(apiDate);
     }
-    return date.toUTCString();
+
+    const utcDateString = apiDate.toISOString();
+
+    return utcDateString;
   }
-  const utcDateString = convertToUTC(release_date);
+
+  const apiDate = new Date(release_date);
+  const utcDateString = convertToUTCDateString(apiDate);
 
   function secondsToMinutes(runtimeInSeconds) {
     if (typeof runtimeInSeconds !== 'number') {
