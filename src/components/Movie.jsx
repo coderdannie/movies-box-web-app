@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import heartIcon from '../assets/Heart.svg';
-
+import img from '../assets/img-bg.png';
 const Movie = ({ release_date, title, poster_path, id }) => {
+  const posterImg = `http://image.tmdb.org/t/p/w154${poster_path}`;
   return (
     <>
       {' '}
@@ -15,7 +16,7 @@ const Movie = ({ release_date, title, poster_path, id }) => {
             <img
               className="object-cover h-full w-full"
               data-testid="movie-poster"
-              src={`http://image.tmdb.org/t/p/w154${poster_path}`}
+              src={poster_path ? posterImg : img}
               alt=""
             />
           </div>

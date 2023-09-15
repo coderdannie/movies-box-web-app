@@ -1,10 +1,9 @@
 import { Link, useParams } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 import { useEffect } from 'react';
-
+import img from '../assets/img-bg.png';
 const MovieDetails = () => {
-  const { fetchMovieDetails, fullData, setFullData, isLoading } =
-    useGlobalContext();
+  const { fetchMovieDetails, fullData, isLoading } = useGlobalContext();
 
   const { id } = useParams();
   useEffect(() => {
@@ -12,7 +11,7 @@ const MovieDetails = () => {
   }, [id]);
   const { title, release_date, runtime, overview, poster_path, genres } =
     fullData;
-
+  const posterImg = `http://image.tmdb.org/t/p/w154${poster_path}`;
   function convertToUTC(date) {
     if (!(date instanceof Date)) {
       date = new Date(date);
@@ -56,7 +55,7 @@ const MovieDetails = () => {
             <img
               data-testid="movie-poster"
               className="object-cover h-full w-full"
-              src={`http://image.tmdb.org/t/p/w154${poster_path}`}
+              src={poster_path ? posterImg : img}
               alt=""
             />
           </div>

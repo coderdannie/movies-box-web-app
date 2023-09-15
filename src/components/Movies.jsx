@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import Movie from './Movie';
 import { useGlobalContext } from '../context';
-import { useEffect } from 'react';
 
 const Movies = () => {
   const { isLoading, data } = useGlobalContext();
-  console.log(data);
+
   if (isLoading) {
     return <div className="loading"></div>;
   }
