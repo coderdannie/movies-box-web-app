@@ -7,10 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import SearchMovies from './SearchMovies';
 
 const Navbar = () => {
-  const { fetchMoviesByTitle, isLoading } = useGlobalContext();
   const [search, setSearch] = useState('');
   const [open, setOpen] = useState(false);
-  console.log(search);
 
   return (
     <nav className="nav relative text-white py-6 grid grid-cols-2 md:place-items-center justify-between  gap-6">

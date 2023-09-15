@@ -8,8 +8,6 @@ export const AppProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [searchData, setSearchData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [configLink, setConfigLink] = useState(true);
-  const [imgSize, setImgSize] = useState('');
   const [fullData, setFullData] = useState('');
   const fetchTopRatedMovies = async () => {
     try {
@@ -18,7 +16,7 @@ export const AppProvider = ({ children }) => {
       setData(movies);
       setIsLoading(false);
     } catch (error) {
-      console.log(error.response);
+      return error.response;
     }
   };
   const fetchMoviesByTitle = async (title) => {
@@ -30,7 +28,7 @@ export const AppProvider = ({ children }) => {
       setSearchData(movies);
       setIsLoading(false);
     } catch (error) {
-      console.log(error.response);
+      return error.response;
     }
   };
   const fetchMovieDetails = async (id) => {
@@ -42,7 +40,7 @@ export const AppProvider = ({ children }) => {
       setFullData(movieDetails);
       setIsLoading(false);
     } catch (error) {
-      console.log(error.response);
+      return error.response;
     }
   };
 

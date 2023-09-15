@@ -59,29 +59,29 @@ const MovieDetails = () => {
               alt=""
             />
           </div>
-          <div className="flex gap-6 py-6">
+          <div className="flex flex-col md:flex-row gap-6 py-6">
             <div className="flex md:items-center flex-col md:flex-row md:gap-6 gap-2">
               <h3
-                className="font-bold text-lg md:text-2xl"
+                className="font-bold md:text-lg lg:text-2xl"
                 data-testid="movie-title"
               >
-                <span>Title:</span>
+                <span className="font-medium">Title:</span>
                 {title}
               </h3>
               <p
-                className="font-bold text-xl text-[#404040]"
+                className="font-bold md:text-xl text-[#404040]"
                 data-testid="movie-release-date"
               >
                 {utcDateString}
               </p>
               <p
-                className="font-bold text-xl text-[#404040]"
+                className="font-bold md:text-xl text-[#404040]"
                 data-testid="movie-runtime"
               >
                 {runtimeInMinutes}
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex h-fit gap-2">
               {genres?.map((item) => {
                 return (
                   <p

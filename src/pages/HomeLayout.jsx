@@ -2,7 +2,6 @@ import { Footer } from '../components';
 import Hero from '../components/Hero';
 import Movies from '../components/Movies';
 import Navbar from '../components/Navbar';
-import SearchMovies from '../components/SearchMovies';
 
 const HomeLayout = () => {
   return (

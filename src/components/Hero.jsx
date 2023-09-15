@@ -24,7 +24,8 @@ const Hero = () => {
       </p>
       <a
         className="py-[6px] px-4 bg-primaryColor uppercase font-bold mt-6 inline-block rounded-md border-pink-600 border-2 text-white"
-        href="/"
+        href="https://www.youtube.com/watch?v=M7XM597XO94"
+        target="_blank"
       >
         <AiFillPlayCircle className="inline mr-2" />
         Watch trailer

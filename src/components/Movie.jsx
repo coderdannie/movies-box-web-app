@@ -27,7 +27,7 @@ const Movie = ({ release_date, title, poster_path, id }) => {
         <div className="card-text">
           <p
             data-testid="movie-release-date"
-            className="movie-date text-gray-400 text-sm  my-3"
+            className="movie-date text-gray-400 text-sm font-bold my-3"
           >
             {release_date}
           </p>
