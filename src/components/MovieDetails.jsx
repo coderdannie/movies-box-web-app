@@ -11,6 +11,7 @@ const MovieDetails = () => {
   }, [id]);
   const { title, release_date, runtime, overview, poster_path, genres } =
     fullData;
+
   const posterImg = `http://image.tmdb.org/t/p/w154${poster_path}`;
   function convertToUTC(date) {
     if (!(date instanceof Date)) {
